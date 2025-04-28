@@ -1,0 +1,1193 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+}
+
+/* Điều chỉnh khoảng cách chung cho toàn bộ website */
+section {
+  padding: 70px 0;
+  margin: 0;
+}
+
+.promo-header {
+  background-image: url("img/hero-bg.png");
+  background-size: cover;
+  background-position: center;
+  min-height: 550px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 80px 0;
+  margin-bottom: 0;
+  position: relative;
+}
+
+/* Add a white overlay to brighten the header image */
+.promo-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.6); /* White transparent overlay */
+  z-index: 1;
+}
+
+.header-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2; /* Place content above the overlay */
+}
+
+.promo-left {
+  width: 50%;
+  padding-right: 20px;
+}
+
+.promo-title {
+  font-size: 36px;
+  color: #000;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.promo-subtitle {
+  font-size: 30px;
+  color: #000;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.promo-features {
+  list-style-type: none;
+}
+
+/* Apply animations to each list item with different delays */
+.promo-features li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: slideInUp 0.8s ease forwards;
+}
+
+/* Animation for the 3rd item (appears first) */
+.promo-features li:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* Animation for the 2nd item (appears second) */
+.promo-features li:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+/* Animation for the 1st item (appears last) */
+.promo-features li:nth-child(1) {
+  animation-delay: 0.9s;
+}
+
+/* Make the text bolder in the feature list */
+.promo-features span {
+  font-size: 16px;
+  color: #333;
+  font-weight: 600; /* Make the text bolder */
+}
+
+.promo-right {
+  width: 40%;
+}
+
+.promo-card {
+  background-color: #c62828;
+  color: white;
+  padding: 30px 20px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: float 3s ease-in-out infinite; /* Add this line for the animation */
+}
+
+.card-icon {
+  margin-bottom: 15px;
+}
+
+.calendar-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.card-text {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.card-date {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.register-btn {
+  background-color: #ffc107;
+  color: #000;
+  border: none;
+  padding: 12px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.register-btn:hover {
+  color: #ffa800;
+  background-color: white;
+}
+
+/* Add this at the end of your style.css file */
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Add animation keyframes for the feature items */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* About Us Section - Updated */
+.about-section {
+  padding: 80px 0 70px;
+  background-color: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%; /* Đảm bảo container luôn lấp đầy không gian */
+}
+
+/* New layout with left and right sides */
+.about-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+
+/* Left side styling */
+.about-content {
+  flex: 1;
+}
+
+.about-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.icon-wrapper {
+  margin-right: 15px;
+  margin-top: 5px;
+}
+
+.leaf-icon {
+  width: 40px;
+  height: 40px;
+  color: #4caf50;
+}
+
+.about-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+}
+
+.about-text p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* Right side styling - Images with flip animation */
+.about-images {
+  flex: 1;
+  display: flex;
+  gap: 20px;
+  flex-direction: row; /* Ensure images are in a horizontal row */
+}
+
+.image-container {
+  flex: 1;
+  min-width: 280px;
+  max-width: calc(
+    50% - 10px
+  ); /* Ensure each takes up half the space minus gap */
+}
+
+/* Flip card effect */
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 300px;
+  perspective: 1000px; /* For 3D effect */
+  margin-bottom: 20px;
+  transition-delay: 0.1s; /* Tùy chọn: Thêm một chút độ trễ khi hover ra để animation tự nhiên hơn */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 1.5s; /* Tăng từ khoảng 1s lên 2.5s để animation chậm hơn */
+  transform-style: preserve-3d;
+}
+
+/* Trigger the flip on hover */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+  transition: transform 1.5s ease-in-out; /* Thêm ease-in-out để animation mượt hơn */
+}
+
+/* Position the front and back sides */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* Front side styling */
+.flip-card-front {
+  background-color: #ffffff;
+  color: black;
+}
+
+/* Back side styling */
+.flip-card-back {
+  background-color: #ffffff;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/* Style for the images */
+.about-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Vision & Mission Section */
+.vision-section {
+  background-image: url("img/banner-tamnhin.png");
+  background-size: cover;
+  background-position: center;
+  height: 220px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+}
+
+/* Green overlay for vision section */
+.vision-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(126, 188, 89, 0.7); /* Green transparent overlay */
+  z-index: 1;
+}
+
+.vision-overlay {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.vision-title {
+  font-size: 42px;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Vision & Mission Content Section */
+.vision-content-section {
+  padding: 70px 0;
+  background-color: #fff;
+}
+
+.vision-content-layout {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.vision-column {
+  flex: 1;
+}
+
+.vision-heading {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.vision-icon-wrapper {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.vision-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.vision-subtitle {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.vision-text p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* Mission list style */
+.mission-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.mission-list li {
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555;
+  position: relative;
+  padding-left: 20px;
+}
+
+.mission-list li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #4caf50;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.mission-list span {
+  font-weight: 600;
+}
+
+/* Service Showcase Section */
+.service-showcase {
+  padding: 70px 0;
+  background-color: #f9f9f9;
+  overflow: hidden; /* Ngăn tràn nội dung */
+}
+
+.showcase-layout {
+  display: flex;
+  gap: 50px;
+  align-items: center; /* Thay đổi từ flex-start thành center */
+  margin: 0;
+  overflow: hidden; /* Ngăn tràn nội dung */
+}
+
+/* Left side green box - Updated */
+.showcase-vision {
+  flex: 0 0 40%;
+  background-color: #59b239;
+  color: white;
+  padding: 40px 30px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  align-self: stretch;
+}
+
+/* Update the heading section to place icon inline with text */
+.showcase-heading {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: white;
+  display: flex; /* Make this a flex container */
+  align-items: center; /* Align icon and text vertically */
+}
+
+/* Style for the icon wrapper inside the heading */
+.vision-icon-wrapper {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.vision-small-icon {
+  width: 30px; /* Slightly smaller */
+  height: 30px; /* Slightly smaller */
+  filter: brightness(0) invert(1); /* Make icon white */
+  margin-bottom: 0; /* Remove bottom margin since it's inline now */
+}
+
+/* Right side with circular images - Modified for single row */
+.service-circles {
+  flex: 0 0 60%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  gap: 20px;
+  position: relative;
+  animation: moveBackAndForth 12s infinite ease-in-out;
+  animation-play-state: running;
+  align-items: center; /* Thay đổi từ flex-start thành center */
+  padding: 0;
+  margin: 0;
+  height: auto;
+  overflow: hidden; /* Ngăn nội dung tràn ra ngoài */
+}
+
+/* Cập nhật service-item để loại bỏ khoảng trắng dư */
+.service-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  max-width: none;
+  position: relative; /* Thêm position relative */
+  height: auto;
+  overflow: visible; /* Cho phép nội dung hiển thị */
+}
+
+/* Điều chỉnh kích thước hình tròn phù hợp hơn */
+@media screen and (min-width: 992px) and (max-width: 1300px) {
+  .service-circle {
+    width: 100px; /* Giảm kích thước hình tròn ở màn hình lớn */
+    height: 100px;
+  }
+
+  .service-name {
+    font-size: 15px; /* Giảm kích thước font chữ */
+  }
+}
+
+/* Điều chỉnh service-circle để đồng bộ kích thước */
+.service-circle {
+  width: 120px; /* Điều chỉnh kích thước phù hợp */
+  height: 120px; /* Giữ tỷ lệ hình tròn 1:1 */
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative; /* Thêm position relative */
+}
+
+.service-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Đảm bảo hình ảnh lấp đầy và cắt nếu cần */
+  display: block; /* Loại bỏ khoảng trắng dưới ảnh */
+}
+
+/* Change the hover effect to not interfere with animation */
+.service-circle:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: none; /* Remove the scale transform */
+}
+
+/* Điều chỉnh service-name để không bị padding/margin không cần thiết */
+.service-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.1;
+  width: 100%; /* Đảm bảo chiều rộng 100% */
+  text-align: center; /* Căn giữa text */
+}
+
+/* Điều chỉnh animation để tránh khoảng trắng */
+@keyframes moveBackAndForth {
+  0% {
+    transform: translateX(15px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(15px);
+  }
+}
+
+/* Banner Tất Cả Dịch Vụ Section */
+.services-banner {
+  background-image: url("img/banner-tamnhin.png"); /* Sử dụng lại hình ảnh từ banner tầm nhìn */
+  background-size: cover;
+  background-position: center;
+  height: 220px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+}
+
+/* Green overlay cho services banner */
+.services-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    126,
+    188,
+    89,
+    0.7
+  ); /* Màu xanh giống banner tầm nhìn */
+  z-index: 1;
+}
+
+.services-overlay {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.services-title {
+  font-size: 42px;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive cho services banner */
+@media screen and (max-width: 768px) {
+  .services-banner {
+    height: 180px;
+  }
+
+  .services-title {
+    font-size: 36px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .services-banner {
+    height: 150px;
+  }
+
+  .services-title {
+    font-size: 28px;
+  }
+}
+
+/* All Services Section */
+.all-services {
+  padding: 70px 0;
+  background-color: #fff;
+}
+
+.services-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Service card styling với opacity 0.5 ở trạng thái mặc định */
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 1 calc(25% - 30px);
+  min-width: 230px;
+  text-align: center;
+  opacity: 0.5; /* Độ mờ 0.5 khi chưa hover */
+  transition: all 0.3s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Khi hover, opacity tăng lên 1 */
+.service-card:hover {
+  opacity: 1;
+  transition: opacity 0.4s ease-in-out;
+}
+
+/* Điều chỉnh transition để opacity thay đổi mượt mà hơn */
+.service-card:hover {
+  opacity: 1;
+  transition: opacity 0.4s ease-in-out;
+}
+
+/* Có thể thêm hiệu ứng filter để tăng cường hiệu ứng mờ */
+.service-img-container {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.service-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+  filter: grayscale(
+    20%
+  ); /* Thêm một chút hiệu ứng xám cho ảnh khi chưa hover */
+}
+
+.service-card:hover .service-img {
+  filter: grayscale(0%); /* Khôi phục màu sắc đầy đủ khi hover */
+}
+
+/* Service title styling */
+.service-title {
+  font-size: 18px;
+  font-weight: 500; /* Font mỏng hơn khi chưa hover */
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Add arrow that will be shown on hover */
+.service-title::after {
+  content: "→";
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+/* Hover effects for service cards */
+.service-card:hover .service-img-container {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
+}
+
+.service-card:hover .service-title {
+  font-weight: 700; /* Font đậm khi hover */
+  color: #000;
+}
+
+/* Show arrow on hover */
+.service-card:hover .service-title::after {
+  opacity: 1;
+  right: -25px;
+}
+
+/* Spa Environment Section */
+.spa-environment {
+  padding: 70px 0;
+  background-color: #f9f9f9;
+}
+
+.environment-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.env-icon-wrapper {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.env-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.environment-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.environment-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.environment-description {
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 60px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.environment-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.gallery-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.gallery-item {
+  flex: 1;
+  max-width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.gallery-img-container {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+/* Hiệu ứng hover - zoom vào hình ảnh */
+.gallery-img-container:hover .gallery-img {
+  transform: scale(1.15);
+}
+
+/* Counter Stats Section */
+.counter-stats {
+  background-image: url("img/banner-tamnhin.png"); /* Sử dụng cùng ảnh nền với vision */
+  background-size: cover;
+  padding: 70px 0;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+}
+
+/* Green overlay cho counter section */
+.counter-stats::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    126,
+    188,
+    89,
+    0.7
+  ); /* Màu xanh giống banner tầm nhìn */
+  z-index: 1;
+}
+
+.counter-overlay {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  width: 200px;
+  text-align: center;
+  padding: 10px;
+}
+
+.stat-icon-wrapper {
+  margin-bottom: 20px;
+  transition: all 0.5s ease;
+}
+
+.stat-icon {
+  width: 60px;
+  height: 60px;
+  filter: brightness(0) invert(1); /* Make icons white */
+  transition: all 0.5s ease;
+}
+
+.stat-number {
+  font-size: 42px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.stat-title {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Animation for icon on hover */
+.stat-item:hover .stat-icon-wrapper {
+  transform: translateY(-15px); /* Icon rises up */
+  animation: spinIcon 1.2s ease; /* Add spin animation */
+}
+
+/* Define spin animation */
+@keyframes spinIcon {
+  0% {
+    transform: translateY(0) rotateY(0);
+  }
+  25% {
+    transform: translateY(-10px) rotateY(180deg);
+  }
+  50% {
+    transform: translateY(-15px) rotateY(360deg);
+  }
+  75% {
+    transform: translateY(-10px) rotateY(540deg);
+  }
+  100% {
+    transform: translateY(-15px) rotateY(720deg); /* 2 full rotations (2 x 360 degrees) */
+  }
+}
+
+/* Responsive cho phần gallery */
+@media screen and (max-width: 992px) {
+  .gallery-row {
+    flex-wrap: wrap;
+  }
+
+  .gallery-item {
+    flex: 0 0 calc(50% - 10px);
+    max-width: calc(50% - 10px);
+  }
+}
+
+/* Customer Reviews Section */
+.customer-reviews {
+  padding: 70px 0;
+  background-color: #ffffff;
+}
+
+.reviews-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 70px;
+}
+
+.reviews-icon-wrapper {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.reviews-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.reviews-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.reviews-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.review-item {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* New layout structure for review items */
+.review-layout {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.customer-photo-wrapper {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 25px;
+  flex-shrink: 0;
+  position: relative;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+/* Hiệu ứng viền xanh mờ khi hover */
+.customer-photo-wrapper:hover {
+  border-color: rgba(89, 178, 57, 0.7); /* Màu xanh lá mờ */
+  box-shadow: 0 0 15px rgba(89, 178, 57, 0.5);
+}
+
+.customer-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.review-content {
+  flex-grow: 1;
+}
+
+.review-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+  font-style: italic;
+}
+
+.customer-info {
+  padding-left: 140px; /* Space to align with text, not photo */
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+/* Điều chỉnh customer-name để tên và chức danh hiển thị trên cùng một dòng */
+.customer-name {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+  white-space: nowrap; /* Ngăn không cho text xuống dòng */
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap; /* Không cho phép các phần tử con xuống dòng */
+}
+
+.customer-name span {
+  font-weight: normal;
+  color: #59b239; /* Màu xanh lá cho chức danh */
+  margin-left: 5px; /* Tạo khoảng cách nhỏ giữa tên và chức danh */
+  white-space: nowrap; /* Đảm bảo chức danh không bị ngắt dòng */
+}
+
+.customer-company {
+  color: #777;
+  font-size: 14px;
+  margin-top: 0;
+}
+
+/* Footer Section */
+.site-footer {
+  background-color: #71bb39; /* Green background */
+  color: #fff;
+  padding: 60px 0 40px;
+  margin-top: 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+/* Logo and Description */
+.footer-info {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+}
+
+.footer-logo {
+  margin-bottom: 20px;
+}
+
+.footer-logo img {
+  max-width: 150px;
+  height: auto;
+}
+
+.footer-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #fff;
+}
+
+/* Contact Section */
+.footer-contact {
+  flex: 1;
+  min-width: 300px;
+}
+
+.footer-heading {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  color: #fff;
+  position: relative;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.contact-icon {
+  margin-right: 10px;
+  width: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.contact-icon img {
+  width: 100%;
+  height: auto;
+  filter: brightness(0) invert(1); /* Make icons white */
+}
+
+.contact-text {
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Connection Section */
+.footer-connect {
+  flex: 1;
+  min-width: 280px;
+  max-width: 350px;
+}
+
+.connect-content {
+  margin-top: 20px;
+}
+
+.digital-image {
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  border-radius: 5px;
+}
+
+/* Copyright */
+.copyright {
+  background-color: #60a32d;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 14px;
+}
+
+/* Responsive footer */
+@media screen and (max-width: 992px) {
+  .footer-content {
+    gap: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .footer-info,
+  .footer-contact,
+  .footer-connect {
+    max-width: 100%;
+  }
+}
